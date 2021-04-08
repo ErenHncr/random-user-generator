@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <title>Random User Generator</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <button v-if="loading" v-on:click="getUser()" class="random-user-btn"><div class="loader"></div></button> -->
+    <div class="card-container">
+      <!-- you can use v-bind or : for prefix -->
+      <img class="round" :class="gender" v-bind:src="picture" :alt="`${firstName} ${lastName}`" />
+      <h3>{{firstName}} {{lastName}}</h3>
+      <h6>{{city}}, {{country}}</h6>
+      <p>{{email}}</p>
+      <div class="skills">
+        <h6>Skills</h6>
+        <ul>
+          <li v-for="skill in skills">{{ skill }}</li>          
+        </ul>
+      </div>
+    </div>    
+    <button v-on:click="getUser()" class="random-user-btn">
+      <box-icon class="refresh-icon" name='refresh' :animation='rotation' rotate='270' color="#fff"></box-icon>
+    </button>
+  </div>
+  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
