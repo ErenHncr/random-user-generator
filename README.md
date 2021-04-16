@@ -1,4 +1,4 @@
-# random-user-generator
+# [random-user-generator](https://erenhncr.github.io/random-user-generator)
 Vue app that shows a new user each time the user clicks the button
 <br><br>
 <p align="center">
