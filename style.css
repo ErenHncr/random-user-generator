@@ -7,14 +7,13 @@
 body {
 	background-color: #28223F;
 	font-family: Montserrat, sans-serif;
-	
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-
 	min-height: 100vh;
 	margin: 0;
+	margin-top: 150px;
 }
 
 h3 {
@@ -32,16 +31,18 @@ p {
 }
 
 #app {
-  width: 400px;
+  width: 600px;
   height: 100vh;
-  margin: auto;
+  margin: 0px;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+	gap: 25px;
+	padding: 0px;
+	padding-bottom: 200px;
 }
-
 
 .card-container {
 	background-color: #1F1A36;
@@ -106,7 +107,7 @@ button.random-user-btn {
   border-radius: 5px;
   cursor: pointer;
   display: inline-block;
-  background: #1a0020;
+  background: #453980;
   color: white;
   font-size: 18px;
   border: 0;
@@ -119,9 +120,122 @@ button.random-user-btn:focus {
 }
 
 button.random-user-btn:hover {
-  background-color: #0f0013;
+  background-color: #4f4291;
+}
+
+button.random-user-btn:active {
+  background-color: #5242a3;
 }
 
 .refresh-icon{
 	margin-top: 5px;
+}
+
+.copy-icon {
+	fill: #fff;
+}
+.copy-btn{
+	outline: none;
+	border: none;
+	background: transparent !important;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 2;
+	border-radius: 8px;
+	padding: 5px 5px 0px 5px;
+}
+
+.copy-btn:hover {
+	background-color: #3e3569 !important;
+}
+
+.copy-btn:active {
+	background-color: #4f4291 !important;
+}
+
+.alert {
+	position: absolute;
+	top: 20px;
+	right: -200px;
+	padding: 8px 18px 8px 10px;	
+	color: white;
+	border-left: 3px solid rgb(11, 184, 40);
+	background: #5242a3;
+	transition: all 0.3s;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.alert[active="true"] {
+	right: 0px;	
+}
+
+/* JSON key value */
+.code-container {
+	max-width: 350px;
+	margin-top: -10px;
+	border-radius: 5px;
+	position: relative;
+}
+/* width */
+pre::-webkit-scrollbar {
+  width: 10px;
+	height: 10px;
+	border-radius: 8px;
+}
+
+/* Track */
+pre::-webkit-scrollbar-track {
+  background: #f1f1f1;
+	border-radius: 8px;
+}
+
+/* Handle */
+pre::-webkit-scrollbar-thumb {
+  background: #888;
+	border-radius: 8px;	
+}
+
+/* Handle on hover */
+pre::-webkit-scrollbar-thumb:hover {
+  background: #555;
+	border-radius: 8px;
+}
+pre {	
+	background-color: #28223F;
+	color: white;
+	padding: 22px 12px 40px 12px !important;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	text-align: left;
+	overflow: scroll;
+	border-radius: 8px;
+	overflow-y: hidden;
+	height: 100%;
+	min-height: 350px;
+	font-size: 18px;
+	}
+.json-key {
+	color: rgb(78, 231, 218);
+	}
+.json-value {
+	color: white;
+	}
+.json-string {
+	color: #ff8aef;
+}
+
+@media screen and (max-width: 700px) {
+	body {
+		margin: 10px;	
+	}
+  #app {
+    flex-direction: column;
+		padding-top: 10px;
+		justify-content: start;
+		align-items: center;
+		padding: 0px;		
+		margin-top: 0px;
+  }
 }

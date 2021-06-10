@@ -8,24 +8,36 @@
   <title>Random User Generator</title>
 </head>
 <body>
-  <div id="app">
-    <!-- <button v-if="loading" v-on:click="getUser()" class="random-user-btn"><div class="loader"></div></button> -->
-    <div class="card-container">
-      <!-- you can use v-bind or : for prefix -->
-      <img class="round" :class="gender" v-bind:src="picture" :alt="`${firstName} ${lastName}`" />
-      <h3>{{firstName}} {{lastName}}</h3>
-      <h6>{{city}}, {{country}}</h6>
-      <p>{{email}}</p>
-      <div class="skills">
-        <h6>Skills</h6>
-        <ul>
-          <li v-for="skill in skills">{{ skill }}</li>          
-        </ul>
-      </div>
-    </div>    
-    <button v-on:click="getUser()" class="random-user-btn">
-      <box-icon class="refresh-icon" name='refresh' :animation='rotation' rotate='270' color="#fff"></box-icon>
-    </button>
+  <div id="app" v-cloak>
+    <div class="card-group">
+      <div class="card-container">
+        <!-- you can use v-bind or : for prefix -->
+        <img class="round" :class="user?.gender" v-bind:src="user?.picture" :alt="`${user?.firstName} ${user?.lastName}`" />
+        <h3>{{ user?.firstName }} {{user?.lastName}}</h3>
+        <h6>{{ user?.city }}, {{ user?.country }}</h6>
+        <p>{{ user?.email }}</p>
+        <div class="skills">
+          <h6>Skills</h6>
+          <ul>
+            <li v-for="skill in user?.skills">{{ skill }}</li>          
+          </ul>
+        </div>
+      </div>    
+      <button v-on:click="getUser()" class="random-user-btn">
+        <box-icon class="refresh-icon" name='refresh' :animation='rotation' rotate='270' color="#fff"></box-icon>
+      </button>
+    </div>
+    <div class="code-container">
+      <pre v-html="prettyPrint(user)">
+        <code></code>
+      </pre>
+      <button class="copy-btn" @click="copyToClipboard(user)">
+        <box-icon class="copy-icon" name='copy'></box-icon>
+      </button>      
+    </div>
+    <Alert>
+      <span class="alert" :active= "copyState">Copied</span>
+    </Alert>
   </div>
   <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script>
   <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
