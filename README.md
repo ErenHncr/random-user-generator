@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Random User Generator
 > Made with **VueJS**.
 
