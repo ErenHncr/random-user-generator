@@ -3,7 +3,7 @@
 
 It is a **Vue** project for generating random user with [randomuser.me](https://randomuser.me) API. Generated user data can be copied.
 
-## <a href="https://vuejs-quizapp.netlify.app" target="blank">Live Demo</a>
+## <a href="https://erenhncr.github.io/random-user-generator" target="blank">Live Demo</a>
 
 ## Preview
 
